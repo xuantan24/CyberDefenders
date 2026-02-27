@@ -120,7 +120,7 @@ Answer: **salem**
         Answer: **bash -i**
 
 
-16.**What is the hostname which alert signal.rule.name: "Netcat Network Activity"?**
+**16.What is the hostname which alert signal.rule.name: "Netcat Network Activity"?**
 
   - **Navigate to Security ➝ Alerts in Elastic Security**. Filter in **signal.rule.name: 'Netcat Network Activity'** to filter alerts specifically related to Netcat usage, often linked to network reconnaissance or exploitation.
             ![image-16.1](images/image16-1.png)

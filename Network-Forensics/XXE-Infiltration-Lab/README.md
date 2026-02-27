@@ -1,11 +1,11 @@
                                         XXE INFILTRATION LAB
 
 
-I.Scenario
+**I.Scenario**
 - An automated alert has detected unusual XML data being processed by the server, which suggests a potential XXE (XML External Entity) Injection attack. This raises concerns about the integrity of the company's customer data and internal systems, prompting an immediate investigation.
 - Analyze the provided PCAP file using the network analysis tools available to you. Your goal is to identify how the attacker gained access and what actions they took.
 
-II.Questions
+**II.Questions**
 
 1.Identifying the open ports discovered by an attacker helps us understand which services are exposed and potentially vulnerable. Can you identify the highest-numbered port that is open on the victim's web server?
 - Firstly, Review the network traffic to locate potential port scanning activity. Focus on packets with a SYN flag, which may indicate a port scan attempt.
@@ -19,7 +19,7 @@ II.Questions
 - Looking at the image below, we can see that the highest number of gates is 3306.
                         ![Q1-3](images/Q1-3.png)
 
-        Answer:  3306
+Answer:  **3306**
  
 2.By identifying the vulnerable PHP script, security teams can directly address and mitigate the vulnerability. What's the complete URI of the PHP script vulnerable to XXE Injection?
 
@@ -30,7 +30,7 @@ II.Questions
 - The next,Check the POST request for the XML file upload. In the packet details, locate the URI path and identify the PHP script that’s processing the malicious XML payload.
                         ![Q2-2](images/Q2-2.png)
 
-        Answer: /review/upload.php
+Answer: **/review/upload.php**
 
 3.To construct the attack timeline and determine the initial point of compromise. What's the name of the first malicious XML file uploaded by the attacker?
 
@@ -39,7 +39,7 @@ II.Questions
 - Focus on the first POST request that contains an XML file, particularly one with a potentially suspicious or crafted payload designed for XXE injection.
 
  
-        Answer: TheGreatGatsby.xml
+Answer: **TheGreatGatsby.xml**
 
 4.Understanding which sensitive files were accessed helps evaluate the breach's potential impact. What's the name of the web app configuration file the attacker read?
 
@@ -51,7 +51,8 @@ II.Questions
 
 - Looking at to the image above, the attacker references a configuration file in the XXE payload. This file often contains sensitive data, like database credentials, which the attacker could exploit.
  
-        Answer: config.php
+Answer: **config.php**
+
 5.To assess the scope of the breach, what is the password for the compromised database user?
 
 - Investigate the configuration file that was accessed for database connection details. These often contain critical information like usernames and passwords.
@@ -61,7 +62,7 @@ II.Questions
 - Look at the content of the file identified in the previous question that was accessed by the attacker. It should contain the credentials needed to connect to the database.
 
  
-        Answer: Winter2024
+Answer: **Winter2024**
 
 6.Following the database user compromise. What is the timestamp of the attacker's initial connection to the MySQL server using the compromised credentials after the exposure?
 
@@ -70,7 +71,7 @@ II.Questions
                         ![Q6-1](images/Q6-1.png)
 
 
-        Answer: 2024-05-31 12:08
+Answer: **2024-05-31 12:08**
 
 7.To eliminate the threat and prevent further unauthorized access, can you identify the name of the web shell that the attacker uploaded for remote code execution and persistence?
 
@@ -79,4 +80,4 @@ II.Questions
 - The attacker uploaded a file named PrideandPrejudice.xml containing an XXE payload that pointed to a remote web shell hosted on an external server.
                         ![Q7-1](images/Q7-1.png)
 
-        Answer: booking.php
+Answer: **booking.php**
